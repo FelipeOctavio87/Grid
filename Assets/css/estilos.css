@@ -1,0 +1,168 @@
+{
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%; /* Asegúrate de que el html y el body ocupen toda la altura */
+}
+
+body {
+    background-color: grey;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Asegúrate de que el body ocupe toda la altura de la ventana */
+}
+
+.grid-container {
+    display: grid;
+    grid-template-areas:
+        "head head"
+        "side main"
+        "foot foot"
+    ;
+    grid-template-columns: 20% 80%; /* Ajusta el tamaño de las columnas según sea necesario */
+    grid-template-rows: auto 1fr auto; /* Asegura que el footer ocupe el espacio adecuado */
+    height: 100vh; /* Asegura que el contenedor de la grilla ocupe toda la altura de la ventana */
+}
+
+.navbar {
+    grid-area: head;
+    text-align: center;
+    display: flex;
+    background-color: blueviolet;
+    color: bisque;
+    align-items: center;
+    justify-content: center;
+}
+.navbar > h2 {
+    font-family: "Playwrite IS", cursive;
+    font-optical-sizing: auto;
+    font-weight:600;
+    font-style: normal;
+}
+.sidebar {
+    grid-area: side;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+    overflow-y: auto;
+}
+
+.sidebar > h3 {
+    margin-top: 7px;
+    font-size: 15px;
+    font-family: "Playwrite IS", cursive;
+    font-optical-sizing: auto;
+    font-weight:400;
+    font-style: normal;
+}
+
+.sidebar > ul > li {
+    margin-top: 5px;
+}
+
+.no-link {
+    pointer-events: visibleStroke;
+    text-decoration: none;
+    color: black;
+    font-family: "Playwrite IS", cursive;
+    font-optical-sizing: auto;
+    font-weight:500;
+    font-style: normal;
+}
+
+.cantidad {
+    color:rgb(94, 66, 25);
+    font-size: 8px;
+    font-family: "Playwrite IS", cursive;
+    font-optical-sizing: auto;
+    font-weight:300;
+    font-style: normal;
+}
+
+.mainContent {
+    grid-area: main;
+    display: grid;
+    justify-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(33%, 1fr));
+    gap: 10px;
+    margin-top: 0.5%;
+    padding: 10px;
+    overflow-y: auto;
+}
+
+.producto {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    text-align: center;
+    width: 100%;
+    gap:10px;
+    padding: 10px;
+}
+
+.imgProd {
+    height: 200px;
+    width: 100%;
+    align-self: center;
+    object-fit: cover;
+}
+
+.nombreProd {
+    font-size: 18px;
+    font-family: "Playwrite IS", cursive;
+    font-weight: 600;
+    font-style: normal;
+    color: black;
+}
+
+.precioProd {
+    font-size: 14px;
+    font-family: "Playwrite IS", cursive;
+    font-weight: 400;
+    font-optical-sizing: auto;
+    font-style: normal;
+    color: black;
+}
+
+.botonProd {
+    background-color: rgb(43, 43, 208);
+    color: white;
+    font-family: "Playwrite IS", cursive;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    height: 40px; /* Tamaño fijo para los botones */
+    width: 80%; /* Ajustar ancho */
+    margin: 0 auto; /* Centrar el botón horizontalmente */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none; /* Asegura que no haya bordes adicionales */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+}
+.botonProd:hover {
+    background-color: rgb(62, 233, 182) !important;
+}
+
+.footer {
+    grid-area: foot;
+    text-align: center;
+    display: flex;
+    background-color: rgb(112, 71, 39);
+    color: rgb(10, 10, 10);
+    align-items: center;
+    justify-content: center;
+    width: 100%; /* Asegura que el footer ocupe todo el ancho */
+}
+
+.footer > span {
+    font-family: "Playwrite IS", cursive;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+}
